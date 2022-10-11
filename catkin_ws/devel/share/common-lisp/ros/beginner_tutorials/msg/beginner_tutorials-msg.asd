@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "beginner_tutorials-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "Accel" :depends-on ("_package_Accel"))
+    (:file "_package_Accel" :depends-on ("_package"))
+    (:file "Alt" :depends-on ("_package_Alt"))
+    (:file "_package_Alt" :depends-on ("_package"))
+    (:file "Gyro" :depends-on ("_package_Gyro"))
+    (:file "_package_Gyro" :depends-on ("_package"))
+    (:file "Mag" :depends-on ("_package_Mag"))
+    (:file "_package_Mag" :depends-on ("_package"))
+    (:file "Num" :depends-on ("_package_Num"))
+    (:file "_package_Num" :depends-on ("_package"))
+    (:file "Person" :depends-on ("_package_Person"))
+    (:file "_package_Person" :depends-on ("_package"))
+    (:file "PmodNav" :depends-on ("_package_PmodNav"))
+    (:file "_package_PmodNav" :depends-on ("_package"))
+    (:file "Temp" :depends-on ("_package_Temp"))
+    (:file "_package_Temp" :depends-on ("_package"))
+  ))
