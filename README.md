@@ -32,12 +32,11 @@ Una vez que el sensor este conectado a la placa, y la placa este conectada al ro
 # 1.Carpeta pynq_lib
 <em>  </em>
 Esta carpeta se encuentra en el siguiente directorio: home/xilinx/pynq/lib/ 
-Este directorio tiene la siguiente forma:
-![pynq_lib](https://user-images.githubusercontent.com/115508916/206218803-8690d1af-e3f9-447d-b619-399bdd71bb0b.png)
 En el archivo pmodnav.c se encontrará el driver de Microblaze. Por un lado se encuentra las conexiones con el sensor Pmod NAV mediante el bus SPI,
 y por otro lado tiene las conexiones con el Mailbox.
 En el archivo pmodnav.py, el ARM recoge los datos del MAilbox, y transforma el dato binario en un valor físico y se realiza una conversión para que el sensor tenga las 
-uniddaes del sistema universal.
+unidadaes del sistema universal.
+![pynq_lib](https://user-images.githubusercontent.com/115508916/206218803-8690d1af-e3f9-447d-b619-399bdd71bb0b.png)
 
 # 1.1.Carpeta pmodnac.c
 <em>  </em>
