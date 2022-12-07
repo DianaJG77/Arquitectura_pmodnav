@@ -38,12 +38,11 @@ En el archivo pmodnav.py, el ARM recoge los datos del MAilbox, y transforma el d
 unidadaes del sistema universal.
 ![pynq_lib](https://user-images.githubusercontent.com/115508916/206218803-8690d1af-e3f9-447d-b619-399bdd71bb0b.png)
 
-# 1.1.Carpeta pmodnac.c
+# 1.1.Carpeta pmodnav.c
 <em>  </em>
-
 Hay que tener cuidao con el bus SPI, ya que el sensor Pmod NAV denomina de una manera a los pinout del sensor y el MicroBlaze de otra, hay que denominarlos como
 lo hace MicroBlaze.
-![pinout_SPI](https://user-images.githubusercontent.com/115508916/206219203-21fedd6e-3ff6-4f98-a165-8f5ec45f9908.png)
+![pinout_SPI](https://user-images.githubusercontent.com/115508916/206219203-21fedd6e-3ff6-4f98-a165-8f5ec45f9908.png).
 
 # 3.Jupyter Notenooks
 <em>  </em>
@@ -54,10 +53,8 @@ Lo único malo es que te da un valor cada vez que lanzas desde Jupyter. Es decir
 # 3.catkin_ws
 <em>  </em>
 Esta carpeta se encuentra en el siguiente directorio: home/xilinx/catkin_ws
-Este directorio se caracteriza por tener la siguiente estructura:
+Esta estructura se ha creado siguiendo los tutoriales de ROS. Se ha creado un Publisher (pmonav_talker.py) y un Subdcriber (pmodnav_listener.py) en la carpeta de scripts y entre ellos se intercambian un mensaje que se encuentra en la carpeta msg donde se definen las variables.
 ![catkin](https://user-images.githubusercontent.com/115508916/195159216-8d6e3ab8-c846-408b-a3b6-66a95bae8dd4.png)
-Esta estructura se ha creado siguiendo los tutoriales de ROS. Se ha creado un Publisher (pmonav_talker.py) y un Subdcriber (pmodnav_listener.py) en la carpeta de scripts
-y entre ello se intercambian un mensaje que se encuentra en la carpeta msg donde se definen las variables.
 
 # 4.bagfile
 <em>  </em>
