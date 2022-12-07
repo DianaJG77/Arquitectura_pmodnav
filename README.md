@@ -13,12 +13,14 @@ y se graban los datos en un archivo.bag mediante el comando rosbag.
 Por último mediante el ROS TOOLBOX se realizan una serie de gráficos con los resultados guardados en el archivo.bag.
 ![esquema](https://user-images.githubusercontent.com/115508916/195158527-ca51a97f-a34b-410f-ba8c-59f01131109f.png)
 
-# 3.Sensor Pmod NAV conectada a placa PYNQ-Z1
+# Configuración
 <em>  </em>
-El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este sensor tiene acelerómetro, giroscopio, magnetómetro, barómetro (altitud y temperatura).
+El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este sensor tiene acelerómetro, giroscopio, magnetómetro, barómetro (altitud y temperatura). Este debe conectarse al puerto PMODA o PMODB. En este proyecto se ha establecido conexión con el puerto PMODA.
+![configuracion](https://user-images.githubusercontent.com/115508916/206214276-ee9d6157-aa64-445f-b86a-789b40400c55.jpg)
 
-
-
+# Arquitectura
+<em>  </em>
+Una vez que el sensor este conectado a la placa, y la placa este conectada al router y a red electrica (bateria), pasamos a explicar la arquitectura empleada para poder desarollar este proyecto. Esta parte se divide en: carpeta pynq_lib, jupyter notebooks, catkin_ws y bagfiles.
 
 # 1.Carpeta pynq_lib
 <em>  </em>
