@@ -1,21 +1,24 @@
 # Arquitectura_pmodnav
 <em>  </em>
 En este proyecto se encuentran todos los archivos generados para el desarollo del proyecto. 
-Este proyecto se recogen datos sobre el sensor PmodNAV y este los manda a la placa PYNQ Z1, donde se procesan para tener valores físicos y son publicados mediante ROS. 
+Este proyecto consiste en que el sensor PmodNAV recoga datos, y los envíe a la placa PYNQ Z1, donde estos datos son procesados para tener valores físicos y sean publicados mediante ROS. 
 Para realizar un mejor estudios se han guardado estos datos en un archivo.bag y mediante ROS TOOLBOX de MATLAB se han realizado una serie de gráficos.
-
-# 3.Sensor Pmpd NAV
-<em>  </em>
-El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este sensor tiene acelerómetro, giroscopio, magnetómetro, barómetro (altitud y temperatura).
 
 # Estructura del proyecto
 <em>  </em>
-Este proyecto se caracteriza por tener la siguiente arquitectura
-![esquema](https://user-images.githubusercontent.com/115508916/195158527-ca51a97f-a34b-410f-ba8c-59f01131109f.png)
-En esta estructura se observa como el sensor Pmod NAV envía los datos al MicroBlaze mediante el bus SPI. El MicroBlaze procesa los datos y los envía al Mailbox.
+Este proyecto se caracteriza por tener la siguiente arquitectura:
+El sensor Pmod NAV envía los datos al MicroBlaze mediante el bus SPI. El MicroBlaze procesa los datos y los envía al Mailbox.
 El ARM recoge los datos del Mailbox y realiza la transformación de dato binario a valor físico. Después mediante ROS se realiza el Publisher y el Subscriber, 
 y se graban los datos en un archivo.bag mediante el comando rosbag.
 Por último mediante el ROS TOOLBOX se realizan una serie de gráficos con los resultados guardados en el archivo.bag.
+![esquema](https://user-images.githubusercontent.com/115508916/195158527-ca51a97f-a34b-410f-ba8c-59f01131109f.png)
+
+# 3.Sensor Pmod NAV conectada a placa PYNQ-Z1
+<em>  </em>
+El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este sensor tiene acelerómetro, giroscopio, magnetómetro, barómetro (altitud y temperatura).
+
+
+
 
 # 1.Carpeta pynq_lib
 <em>  </em>
