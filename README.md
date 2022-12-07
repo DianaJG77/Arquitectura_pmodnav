@@ -16,7 +16,14 @@ Por último mediante el ROS TOOLBOX se realizan una serie de gráficos con los r
 # Configuración
 <em>  </em>
 El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este sensor tiene acelerómetro, giroscopio, magnetómetro, barómetro (altitud y temperatura). Este debe conectarse al puerto PMODA o PMODB. En este proyecto se ha establecido conexión con el puerto PMODA.
+
 ![configuracion](https://user-images.githubusercontent.com/115508916/206214276-ee9d6157-aa64-445f-b86a-789b40400c55.jpg)
+![PlacaFPGA-removebg-preview](https://user-images.githubusercontent.com/115508916/206218150-f2bc259b-181a-4505-9f72-898a51f1d761.png)
+Para que la placa funcione se debe conectar a una red eléctrica (que utilizara como batería) y a una red de internet (para establecer conexión con el portátil), para ello se ha empleado la aplicación de PuTTY. En este proyecto se han estudiado dos maneras:
+![01](https://user-images.githubusercontent.com/115508916/206217187-8a25d1e5-b905-45f7-898a-07f979d07b7d.jpg)
+![02](https://user-images.githubusercontent.com/115508916/206217383-a8ae849b-2dc0-413c-ba65-2f7e943620eb.jpg)
+
+
 
 # Arquitectura
 <em>  </em>
@@ -26,19 +33,24 @@ Una vez que el sensor este conectado a la placa, y la placa este conectada al ro
 <em>  </em>
 Esta carpeta se encuentra en el siguiente directorio: home/xilinx/pynq/lib/ 
 Este directorio tiene la siguiente forma:
-![pynq_lib](https://user-images.githubusercontent.com/115508916/195156110-2b92d5d6-445b-4ff7-9b38-164aad36ccd4.png)
-En el archivo pmodnav.c se encontrará el driver de Microblaze. Po un lado se encuentra las conexiones con el sensor Pmod NAV mediante el bus SPI,
+![pynq_lib](https://user-images.githubusercontent.com/115508916/206218803-8690d1af-e3f9-447d-b619-399bdd71bb0b.png)
+En el archivo pmodnav.c se encontrará el driver de Microblaze. Por un lado se encuentra las conexiones con el sensor Pmod NAV mediante el bus SPI,
 y por otro lado tiene las conexiones con el Mailbox.
+En el archivo pmodnav.py, el ARM recoge los datos del MAilbox, y transforma el dato binario en un valor físico y se realiza una conversión para que el sensor tenga las 
+uniddaes del sistema universal.
+
+# 1.1.Carpeta pmodnac.c
+<em>  </em>
+
 Hay que tener cuidao con el bus SPI, ya que el sensor Pmod NAV denomina de una manera a los pinout del sensor y el MicroBlaze de otra, hay que denominarlos como
 lo hace MicroBlaze.
-En el archivo pmodnav.py, el ARM recoge los datos del MAilbox, y transforma el dato binario en un valor físico y se realiza una conversión para que el sensor tenga las 
-unides del sistema universal.
+![pinout_SPI](https://user-images.githubusercontent.com/115508916/206219203-21fedd6e-3ff6-4f98-a165-8f5ec45f9908.png)
 
 # 3.Jupyter Notenooks
 <em>  </em>
 Se crea el archivo pmodnav.ipnyb en la siguiente dirección: Jupyter/base/pmod. Este archivo nos permite comprobar que el driver esta bien hecho. Lo que hacemos es
-pedir desde Jupyter el valor de dichas funciones definidas en el driver sin necesidad de crear el Publlisher y el Subscriber para ver los resultados.
-Lo único malo es que te daun valor cada vez que lanzas desde Jupyter.
+pedir desde Jupyter el valor de dichas funciones definidas en el driver sin necesidad de crear el Publisher y el Subscriber para ver los resultados.
+Lo único malo es que te da un valor cada vez que lanzas desde Jupyter. Es decir, que no te da valores en movimiento.
 
 # 3.catkin_ws
 <em>  </em>
