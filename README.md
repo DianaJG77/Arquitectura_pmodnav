@@ -16,6 +16,7 @@ El sensor Pmod NAV es un sensor inercial (IMU) de 10 grados de libertad. Este se
 # Configuración
 <em>  </em>
 Para que la placa funcione se debe conectar a una red eléctrica (que utilizara como batería) y a una red de internet (para establecer conexión con el portátil), para ello se ha empleado la aplicación de PuTTY. La configuración se puede esyablecer de varias maneras:
+
 ![01](https://user-images.githubusercontent.com/115508916/206217187-8a25d1e5-b905-45f7-898a-07f979d07b7d.jpg)
 ![02](https://user-images.githubusercontent.com/115508916/206217383-a8ae849b-2dc0-413c-ba65-2f7e943620eb.jpg)
 
@@ -39,8 +40,7 @@ unidadaes del sistema universal. Para ello hay que seguir la misma estrucutrua q
 ![mailbox](https://user-images.githubusercontent.com/115508916/206225104-2c51483f-c959-42dc-bda1-7868c351246d.png)
 
 
-
-# 3.Jupyter Notebooks
+# 2.Jupyter Notebooks
 <em>  </em>
 Se crea el archivo pmodnav.ipnyb en la siguiente dirección: Jupyter/base/pmod. Este archivo nos permite comprobar que el driver esta bien hecho. Lo que hacemos es
 pedir desde Jupyter el valor de dichas funciones definidas en el driver sin necesidad de crear el Publisher y el Subscriber para ver los resultados.
